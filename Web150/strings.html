@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+    <head>
+    <body>
+       <div id="content"><div>
+            <div id="title">Howdy <span id="name">friends</span></div>
+            <div id="note">Take a look around</div>
+        </div>
+        <script>
+            //prompt user for input
+            ///creates the variables for the name and message
+            var userName = prompt("What is your user name?", "Java");
+            var num1 = parseInt(prompt("Please enter the first number"));
+            var num2 = parseInt(promt("Please enter the second number"));
+            var result = num1 + num2;
+            alert(results);
+            
+            
+            
+            
+            
+            //var userName="Solomon";
+            var message ="See our upcoming range";
+            
+           //get the element with the id name
+            var elName = document.getElementById('name');
+          //replace the content 
+            elName.textContent = userName
+            
+        //get the element with the id of note
+            var elNote = document.getElementById('note');
+        //replace the content of 
+            elNote.textContent = message;
+        </script>
+        </div>
+        </body>
+    </head>
+</html>

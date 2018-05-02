@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+</head>
+<body>
+    <div id="message"> Welcome to our sites!</div>
+<script>
+    //create a varibale for the message
+    var msg= "Sign up to recive our newsletter for 10% off";
+    var one="notebooks";
+    var two="pens";
+    var finial="Our Daily specials are," + " " + one + " " + "and" + " " + two  + ".";
+    //declear the function 
+    function updateMessage(finial) {
+        var el=document.getElementById ('message');
+        el.textContent = finial;
+    }
+    //call the strip
+    updateMessage(finial);
+    </script>
+</body>
+</html>

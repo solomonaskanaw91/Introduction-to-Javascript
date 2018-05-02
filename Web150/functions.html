@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+<head>
+    <title>Function with params and return value</title>
+</head>
+<body>
+    <h3>Calculate area and value of a rectangle</h3>
+    <div id="area"></div>
+    <div id="sizes"></div>
+<script>
+    //declear the area function
+function calculateArea(width,height){
+       var area = width * height;//area is a local variable to the function
+        return area;
+    }
+    //call the function
+    var area= calculateArea (4,5);
+    
+    //display the area
+    var elArea = document.getElementById("area");
+    //elArea.textContent = "area is: " + area;
+ 
+    //return multiple values with an array
+    function getSize(width,height,depth){
+        //calculate the area
+        var area= width * height;
+        //calculte volume
+        var volume= width * height * depth;
+        //create a array to store the results
+        var sizes= [area, volume];
+        return sizes;
+        
+    }
+    
+      var area = getSize(3,2,3)[0];//area is index zero
+      var volume = getSize(3,2,3)[1];//volume is index one
+    //display resultes
+    var elSizes=document.getElementById("sizes");
+    elSizes.textContent= "area is: " + area + " volume is: " + volume;
+</script>
+    </body>
+</html>

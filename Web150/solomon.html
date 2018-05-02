@@ -1,0 +1,54 @@
+﻿<! COMMENTS HERE >
+<! 
+
+<!DOCTYPE  HTML  >
+<html>
+
+    <head>
+        
+    </head>
+
+    <body>
+        
+    <script>
+        // first javascript example
+        // declare variable for the Date object
+        
+        
+// BODY OF CODE FOR ASSIGNMENT    BEGINS HERE
+// BODY OF CODE FOR ASSIGNMENT    BEGINS HERE
+// BODY OF CODE FOR ASSIGNMENT    BEGINS HERE
+        // put newlines between greeting USER NAME PROMPT entry
+        var userName = prompt("Please enter your name", "<name goes here>");
+        
+        if (userName!= null) {       // if USER INPUTed NO INFORMATION
+            //document.write("AARON DEBUG FLAG 01  <br>");
+
+        } else {                         //  cannot get NULL PATH ARC CODE TO WORK 
+            document.write("  <br> <br>");
+            document.write("   USER ERROR.   NEXT TIME, TYPE IN SUITABLE NAME FOR THIS ENTRY.  <br>");
+        }
+        
+        // create PROMT to have USER type in first number
+        var num01 = prompt("Please enter a first  number here, say 1 to 100:   ", "<first  number goes here>");
+        var numnum01 = parseFloat(num01); // convert input of string type to number, this case Float, could have used Int
+        
+        // create PROMT to have USER type in first number
+        var num02 = prompt("Please enter a second number here, say 1 to 100:   ", "<second number goes here>");
+        var numnum02 = parseFloat(num02);  // convert input of string type to number, this case Float, could have used Int
+
+        
+        // create RESULT = INPUT_NUMBER01 + INPUT_NUMBER02  
+        var result = numnum01 + numnum02 ;
+        
+        // Now for the final display per the Assignment SPECs
+        document.write("<h3> Let's add up two numbers!  <br> </h3>");
+        document.write("<h3> Hi, " + userName + ", the result of adding " + num01 + " and " +  num02 + " is " + result + " <br> </h3>");
+        document.write("  <br>");
+        
+        
+    </script>
+        
+    </body>
+        
+</html>

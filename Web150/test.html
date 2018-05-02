@@ -1,0 +1,89 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body style="margin:3em;line-height:180%;">
+
+<h1>ACADEMIC GRADING SYSTEM</h1>
+
+In this project, we will be building an Academic Grading system. In our grading system, you will be able to put in a number grade, and the system will spit out a letter grade, for example 80 = B. This project will we be done using a combination of HTML, CSS, and our Programming Foundations in JavaScript. Non of your applications functionality should be done in the console.
+
+<strong>Requirements</strong>
+
+<ol>
+<li>HTML Input to allow the user to input grades(numbers)</li>
+<li>The input should only allow a number type to be inputted.</li>
+<li>The input should only allow number 0 - 100.</li>
+<li>Using JavaScript and DOM Manipulation, display the letter grade on the page.</li>
+<li>Should allow a single or multiple inputs at once.</li>
+<li>If multiple inputs are entered, the systems should return each individual letter grade as well as an average.</li>
+</ol>
+
+<script>
+ 
+ $(function() { // jQuery Document Ready (...the page finished loading.)
+        $("#grades").keyup(function() { // keyup works best for doing realtime calculations...
+            
+            // Get the grades into an array
+            var grades = $("#grades").val().trim(); // Does not work without the "trim"
+            grades = grades.split(" ");
+            var message = ''; // Start with no message.
+            // Loop through all the grades...
+            for (var i in grades) {
+                
+                // Convert the numbers into the letters here...
+                var test_grade = grades[i];
+                var grade = '';
+                
+                console.log('grades.length '+ grades.length);
+                console.log('test_grade.length '+ test_grade.length);
+                
+                if ((grades.length == 1) && (test_grade.length == 0)) { // The pressed the shift key or spacebar, just ignore...
+                    // break;
+                } else if (isNaN(test_grade) && (test_grade.length > 0)) { // Test for letters like "A" but ignore actual "NaN" 
+                    message = "<strong>ERROR</strong> - Please only enter numbers."; 
+                    break;
+                } else if (test_grade < 0) {
+                    message = "<strong>ERROR</strong> - Valid grades are 0 - 100.";
+                    break;
+                } else if ((test_grade < 60) && (test_grade >= 0)) {
+                    grade = "F";
+                } else if (test_grade < 70) {
+                    grade = "D";
+                } else if (test_grade < 80) {
+                    grade = "C";
+                } else if (test_grade < 90) {
+                    grade = "B";
+                } else if (test_grade <= 100) {
+                    grade = "A";
+                } else if (test_grade > 100) {
+                    message = "<strong>ERROR</strong> - Valid grades are 0 - 100.";
+                    break;
+                }
+                message += grade + " ";
+                
+            } // end loop through array...
+ 
+            $("#calculated-grades").html(message);
+        
+        }); 
+        
+ });
+ 
+</script>
+
+<div style="display:flex;width:80%;">
+
+    <div style="padding:1em;">
+        <strong>Please enter your grades:</strong>
+    </div>
+    <div style="padding:1em;">
+        <input id="grades" style="font-size:1.1em;"></input>
+    </div>
+    
+</div><!-- close the flexbox -->
+
+<div id="calculated-grades" style="font-size:1.3em;font-weight:bold;line-height:1.8em;"></div>
+
+</body>
+</html>

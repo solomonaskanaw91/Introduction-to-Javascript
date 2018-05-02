@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset= "uft-8">
+<title>Show letter grade</title>
+</head>
+<body>
+    <h1>Bullseye</h1>
+    <section id="answer"></section>
+    <script>
+        var score = 88;
+        var msg =;
+        
+        //if score is 50 or higher
+        if (score >= 87){
+            msg= 'Congratulations!';
+
+        } else {
+            msg = 'Have anothe go';
+        }
+        var el= document.getElementById('answer');
+        el.textContent= msg;
+    </script>
+</body>  
+        
+</html>
